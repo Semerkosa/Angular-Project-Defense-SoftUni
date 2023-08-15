@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header>
+    <nav>
+        <a routerLink="/home">Gimy</a>
+
+        <div id="nav">
+            <a routerLink="/home">Home</a>
+            <a routerLink="/coaches">Online coaches</a>
+            <a routerLink="/workout-programs">Workout Programs</a>
+            <a routerLink="/workout-programs/:userId">Your Workout Programs</a>
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/login">Login</a>
+            <a routerLink="/register">Register</a>
+            <a routerLink="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <span>Welcome back, {{ user.name }}!</span>
+</header>
