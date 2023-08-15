@@ -1,23 +1,45 @@
 <main>
-    <form>
+    <form [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()">
+        <h2>Register Form</h2>
+
+        <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+
         <div class="form-input">
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input [class.input-error]="shouldShowErrorForControl('email')" 
+            type="email" id="email" name="email">
         </div>
+
+        <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
+            <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="error">
+                Email is required!
+            </p>
+
+            <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="error">
+                Email is not valid!
+            </p>
+        </ng-container>
 
         <div class="form-input">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name">
+            <input type="text" id="first-name" name="first-name">
         </div>
 
         <div class="form-input">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name">
+            <input type="text" id="last-name" name="last-name">
         </div>
 
         <div class="form-input">
             <label for="password">Password</label>
-            <input type="password" id="password">
+            <input type="password" id="password" name="password">
         </div>
+
+        <!-- <button [disabled]="registerFormGroup.invalid">Create Account</button> -->
+        <button>Create Account</button>
+
+        <p class="bottom_p">
+            Have an account? <a routerLink="/login">Log In</a>
+        </p>
     </form>
 </main>

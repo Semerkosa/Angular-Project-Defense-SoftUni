@@ -69,3 +69,26 @@ main {
         margin-top: -0.5rem;
     }
 }
+
+.input-error {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+}
+
+form {
+    button {
+        background-color: lightgreen;
+        padding: 1rem 1.25rem;
+        margin: 0 auto;
+        width: fit-content;
+        color: black;
+        display: block;
+        margin-top: 2rem;
+        cursor: pointer;
+        border: unset;
+        border-radius: 30px;
+    }
+}

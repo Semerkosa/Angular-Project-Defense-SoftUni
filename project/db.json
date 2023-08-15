@@ -1,3 +1,23 @@
 {
-  
+  "users": [
+    {
+      "email": "pesho@abv.bg",
+      "password": "$2a$10$vAyOWIGWREB4bZMQul2R0Ofq0Z/aSk6himH11bbf/jpUA7Y3fFhiG",
+      "id": 1
+    },
+    {
+      "email": "pesaho@abv.bg",
+      "password": "$2a$10$T.hLr4yClqE2o57o9ZeNxuyfjB.IxG55Xc4gjZhdmO4jYKw5qzTH2",
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "id": 2
+    },
+    {
+      "email": "pesaaho@abv.bg",
+      "password": "$2a$10$guKJCpx9ocR5fycRw3papuEzIa0CZvYvgqg8L07q2dAHLsrUVZ4N2",
+      "firstName": "firastName",
+      "lastName": "lasatName",
+      "id": 3
+    }
+  ]
 }

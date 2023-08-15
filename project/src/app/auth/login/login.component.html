@@ -1,5 +1,7 @@
 <main>
     <form>
+        <h2>Login Form</h2>
+
         <div class="form-input">
             <label for="email">Email</label>
             <input type="text" id="email" >
@@ -9,5 +11,11 @@
             <label for="password">Password</label>
             <input type="password" id="password">
         </div>
+
+        <!-- <button [disabled]="loginFormGroup.invalid">Log In</button> -->
+
+        <p class="bottom_p">
+            New to Gimy? <a routerLink="/register">Register</a>
+        </p>
     </form>
 </main>
