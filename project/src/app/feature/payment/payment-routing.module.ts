@@ -8,4 +8,4 @@ const routes: Routes = [
 	},
 ];
 
-export const PaymentRoutingModule = RouterModule.forRoot(routes);
+export const PaymentRoutingModule = RouterModule.forChild(routes);

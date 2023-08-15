@@ -24,7 +24,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        // TODO: Add Service providers
+        UserService,
       ]
     }
   }

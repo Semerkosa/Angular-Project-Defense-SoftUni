@@ -13,4 +13,4 @@ const routes: Routes = [
 	}
 ];
 
-export const CoachesRoutingModule = RouterModule.forRoot(routes);
+export const CoachesRoutingModule = RouterModule.forChild(routes);

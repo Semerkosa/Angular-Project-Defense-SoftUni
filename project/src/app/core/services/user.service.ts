@@ -16,14 +16,18 @@ const httpOptions = {
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
-  login(user: IUser) {
+  isLoggedIn() {
+    return localStorage.getItem("id");
+  }
+
+  login$(user: IUser) {
     const url = `${environment.apiUrl}/login`;
     return this.http.post<any>(url, user, httpOptions);
   }
 
-  register(user: ICreateUserDto): Observable<any> {
+  register$(user: ICreateUserDto): Observable<any> {
     const url = `${environment.apiUrl}/register`;
     return this.http.post<ICreateUserDto>(url, user, httpOptions);
   }

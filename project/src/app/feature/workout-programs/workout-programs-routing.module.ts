@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from "@angular/router";
 import { WorkoutProgramsListComponent } from "./workout-programs-list/workout-programs-list.component";
 import { WorkoutProgramReviewPageComponent } from "./workout-program-review-page/workout-program-review-page.component";
+import { WorkoutProgramsUserListComponent } from "./workout-programs-user-list/workout-programs-user-list.component";
 
 const routes: Routes = [
     {
@@ -8,7 +9,11 @@ const routes: Routes = [
         component: WorkoutProgramsListComponent,
     },
     {
-        path: 'workout-programs/:programId',
+        path: 'workout-programs/user/:id',
+        component: WorkoutProgramsUserListComponent,
+    },
+    {
+        path: 'workout-programs/:id',
         component: WorkoutProgramReviewPageComponent,
     },
 ];
