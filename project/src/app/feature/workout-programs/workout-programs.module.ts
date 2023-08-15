@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkoutProgramsListComponent } from './workout-programs-list/workout-programs-list.component';
-import { WorkoutProgramReviwPageComponent } from './workout-program-reviw-page/workout-program-reviw-page.component';
+import { WorkoutProgramReviewPageComponent } from './workout-program-review-page/workout-program-review-page.component';
+import { WorkoutProgramsRoutingModule } from './workout-programs-routing.module';
 
 
 
 @NgModule({
   declarations: [
     WorkoutProgramsListComponent,
-    WorkoutProgramReviwPageComponent
+    WorkoutProgramReviewPageComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    WorkoutProgramsRoutingModule
   ]
 })
 export class WorkoutProgramsModule { }

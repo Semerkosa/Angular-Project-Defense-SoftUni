@@ -12,4 +12,4 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     CommonModule
   ]
 })
-export class PaymentModule { } 
+export class PaymentModule { }
