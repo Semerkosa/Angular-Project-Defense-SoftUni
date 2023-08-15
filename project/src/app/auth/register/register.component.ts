@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {
-	FormGroup,
-	FormControl,
-	Validators,
 	FormBuilder,
-	AbstractControl,
-	ValidationErrors,
+	FormControl,
+	FormGroup,
+	Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
-import { ICreateUserDto, IUser } from 'src/app/core/interfaces';
+import { ICreateUserDto } from 'src/app/core/interfaces';
 import { UserService } from 'src/app/core/services/user.service';
+import { emailValidator, passwordValidator } from '../utils';
 
 @Component({
 	selector: 'app-register',
@@ -21,7 +20,7 @@ export class RegisterComponent implements OnInit {
 	errorMessage = '';
 
 	registerFormGroup: FormGroup = this.formBuilder.group({
-		email: new FormControl(null, [Validators.required, this.emailValidator]),
+		email: new FormControl(null, [Validators.required, emailValidator]),
 		firstName: new FormControl(null, [
 			Validators.required,
 			Validators.minLength(2),
@@ -29,7 +28,7 @@ export class RegisterComponent implements OnInit {
 		lastName: new FormControl(),
 		password: new FormControl(null, [
 			Validators.required,
-			this.passwordValidator,
+			passwordValidator,
 		]),
 	});
 
@@ -52,35 +51,64 @@ export class RegisterComponent implements OnInit {
 			firstName: firstName,
 			lastName: lastName,
 			password: password,
+			purchasedWorkoutPrograms: [],
+			coach: null
 		};
 
-		this.userService.register$(body)
-			.pipe(
-				map(response => {
-					console.log('Registered user response:');
-					console.log(response);
+		// this.userService.register$(body)
+		// 	.pipe(
+		// 		map(response => {
+		// 			console.log('Registered user response:');
+		// 			console.log(response);
 
-					localStorage.setItem('id', response.user.id);
-					localStorage.setItem('email', response.user.email);
-				}),
-				switchMap(() => {
-					return this.router.navigate([`/workout-programs`]);
-				})
-			)
-			.subscribe({
-				next(isNavigated) {
-					console.log(`Navigated successfully (${isNavigated})`);
-				},
-				error(msg) {
-					console.log("Error upon registration");
-					alert(msg.error);
-				}
+		// 			localStorage.setItem('id', response.user.id);
+		// 			localStorage.setItem('email', response.user.email);
+		// 		}),
+		// 		switchMap(() => {
+		// 			return this.router.navigate([`/workout-programs`]);
+		// 		})
+		// 	)
+		// 	.subscribe({
+		// 		next(isNavigated) {
+		// 			console.log(`Navigated successfully (${isNavigated})`);
+		// 		},
+		// 		error(msg) {
+		// 			console.log("Error upon registration");
+
+		// 			alert(msg.error);
+		// 		}
+		// 	}
+		// 	);
+
+		this.userService.register$(body).subscribe({
+			next: response => {
+				console.log('Registered user response:');
+				console.log(response);
+
+				localStorage.setItem('id', response.user.id);
+				localStorage.setItem('token', response.accessToken);
+				localStorage.setItem('fullName', `${response.user.firstName} ${response.user.lastName}`);
+
+				this.userService.updateLoginStatus(true);
+
+				this.router.navigate([`/workout-programs`]);
+			},
+			complete: () => {
+				console.log('Registration stream completed')
+			},
+			error: (httpError) => {
+				console.log(httpError);
+				this.errorMessage = httpError.error + "!";
+
+				this.registerFormGroup.setValue({
+					email: email,
+					firstName: firstName,
+					lastName: lastName,
+					password: ""
+				});
+				this.registerFormGroup.markAsUntouched();
 			}
-			);
-	}
-
-	navigate(destination: string) {
-		this.router.navigate([destination]);
+		});
 	}
 
 	shouldShowErrorForControl(
@@ -91,41 +119,5 @@ export class RegisterComponent implements OnInit {
 			sourceGroup.controls[controlName].touched &&
 			sourceGroup.controls[controlName].invalid
 		);
-	}
-
-	emailValidator(control: AbstractControl): ValidationErrors | null {
-		const value = control.value;
-		console.log('Validating email - ' + value);
-
-		if (!value) {
-			return null;
-		}
-
-		if (!/.{5,}@(gmail|abv)\.(com|bg)/.test(value)) {
-			// pesho@abv.bg, ivan_ivanov@gmail.com
-			return {
-				email: true,
-			};
-		}
-
-		return null;
-	}
-
-	passwordValidator(control: AbstractControl): ValidationErrors | null {
-		const value = control.value;
-		console.log('Validating password - ' + value);
-
-		if (!value) {
-			return null;
-		}
-
-		if (!/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(value)) {
-			// Strongpass123
-			return {
-				password: true,
-			};
-		}
-
-		return null;
 	}
 }

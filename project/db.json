@@ -1,5 +1,13 @@
 {
   "users": [
-	
+    {
+      "email": "semerkosa@abv.bg",
+      "password": "$2a$10$FO0h7jpg5B4dfmqKp6N1P.zfWl9K1NPoq5LqXTFPVLZohpnE0s9Py",
+      "firstName": "Teodor",
+      "lastName": "Semerdzhiev",
+      "purchasedWorkoutPrograms": [],
+      "coach": null,
+      "id": 1
+    }
   ]
 }

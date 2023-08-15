@@ -1,9 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICreateUserDto, IUser } from '../interfaces';
+import { ICreateUserDto, ILoginUserDto } from '../interfaces';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,14 +14,24 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  public isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
-  isLoggedIn() {
-    return localStorage.getItem("id");
+  updateLoginStatus(status: boolean) {
+    this.isAuthenticatedSubject.next(status);
   }
 
-  login$(user: IUser) {
+  isLoggedIn() {
+    return !!localStorage.getItem("token"); // to retrieve boolean
+  }
+
+  getUserFullName() {
+    return localStorage.getItem("fullName");
+  }
+
+  login$(user: ILoginUserDto) {
     const url = `${environment.apiUrl}/login`;
     return this.http.post<any>(url, user, httpOptions);
   }
@@ -33,7 +42,10 @@ export class UserService {
   }
 
   logout() {
-    localStorage.clear;
-    this.router.navigate(["/login"]);
+    localStorage.removeItem("id");
+    localStorage.removeItem("fullName");
+    localStorage.removeItem("token");
+
+    this.updateLoginStatus(false);
   }
 }

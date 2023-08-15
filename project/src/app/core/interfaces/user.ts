@@ -6,6 +6,6 @@ export interface IUser extends IBase {
     email: string;
     password: string;
     purchasedWorkoutPrograms: IWorkoutProgram[];
-    hiredCoach: ICoach;
+    coach: ICoach;
     // isAdmin: boolean; // Admin should be able to add more workout programs and coaches and/or edit their descriptions
 }

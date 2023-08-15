@@ -17,7 +17,7 @@
             </p>
 
             <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="error">
-                Email is not valid!
+                Email is invalid!
             </p>
         </ng-container>
 
@@ -63,7 +63,6 @@
         <button [class.disabled-btn]="registerFormGroup.invalid" [disabled]="registerFormGroup.invalid">
             Create Account
         </button>
-        <!-- <button>Create Account</button> -->
 
         <p class="bottom_p">
             Have an account? <a routerLink="/login">Log In</a>
