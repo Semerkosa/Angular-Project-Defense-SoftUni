@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoachListComponent } from './coach-list/coach-list.component';
 import { CoachReviewPageComponent } from './coach-review-page/coach-review-page.component';
+import { RouterModule } from '@angular/router';
+import { CoachesRoutingModule } from './coaches-routing.module';
 
 
 
@@ -11,7 +13,8 @@ import { CoachReviewPageComponent } from './coach-review-page/coach-review-page.
     CoachReviewPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CoachesRoutingModule,
   ]
 })
 export class CoachesModule { }
