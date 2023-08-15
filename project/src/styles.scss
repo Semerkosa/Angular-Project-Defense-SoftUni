@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(196, 196, 196, 0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(196, 196, 196, 0.75);
+    box-shadow: 0px 0px 28px 0px rgba(196, 196, 196, 0.75);
+}

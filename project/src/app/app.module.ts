@@ -13,22 +13,22 @@ import { WorkoutProgramsModule } from './feature/workout-programs/workout-progra
 import { PaymentModule } from './feature/payment/payment.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CoreModule.forRoot(),
-    AuthModule,
-    RouterModule,
-    AppRoutingModule,
-    PagesModule,
-    CoachesModule,
-    WorkoutProgramsModule,
-    PaymentModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		CoreModule.forRoot(),
+		AuthModule,
+		RouterModule,
+		AppRoutingModule,
+		PagesModule,
+		CoachesModule,
+		WorkoutProgramsModule,
+		PaymentModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
