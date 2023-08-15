@@ -1,6 +1,20 @@
+$dark-blue: #273658;
+
 @font-face {
     font-family: 'Roboto';
     src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: $dark-blue;
+    display: flex;
+    flex-direction: column;
 }
 
 p,
@@ -8,11 +22,19 @@ h1,
 h2,
 h3 {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: .75rem;
+}
+
+a {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+footer {
+    margin-top: auto;
 }
 
 main {
@@ -26,11 +48,6 @@ main {
     box-shadow: 0px 0px 28px 0px rgba(196, 196, 196, 0.75);
 }
 
-a {
-    text-decoration: none;
-    color: lightcoral;
-}
-
 .form-input {
     display: flex;
     flex-direction: column;
@@ -42,8 +59,7 @@ a {
         padding: 0rem .3rem;
         margin-left: .8rem;
         width: fit-content;
-        z-index: 1
-    ;
+        z-index: 1;
     }
 
     input {
