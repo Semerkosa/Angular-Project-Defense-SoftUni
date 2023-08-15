@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkoutProgramComponent } from './workout-program.component';
+import { CoachReviewPageComponent } from './coach-review-page.component';
 
-describe('WorkoutProgramComponent', () => {
-  let component: WorkoutProgramComponent;
-  let fixture: ComponentFixture<WorkoutProgramComponent>;
+describe('CoachReviewPageComponent', () => {
+  let component: CoachReviewPageComponent;
+  let fixture: ComponentFixture<CoachReviewPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorkoutProgramComponent ]
+      declarations: [ CoachReviewPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WorkoutProgramComponent);
+    fixture = TestBed.createComponent(CoachReviewPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
