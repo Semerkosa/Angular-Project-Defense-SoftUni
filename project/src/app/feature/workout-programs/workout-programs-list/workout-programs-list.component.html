@@ -1,1 +1,26 @@
-<p>workout-programs-list works!</p>
+<main *ngIf="isLoaded; else loading">
+
+    <div *ngIf="workoutPrograms; else noPrograms" class="programs">
+        <h1>Different lifestyle - different program!</h1>
+
+        <ul>
+            <li *ngFor="let program of workoutPrograms">
+                <h3>Program: {{ program.name }}</h3>
+                <p>{{ program.description }}</p>
+                <a routerLink="/workout-programs/{{program.id}}">Learn More</a>
+                <div class="price-info">
+                    <p>Costs only {{ program.price }}</p>
+                    <button class="btn">Buy</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #noPrograms>
+        <h2>No programs available at the moment.</h2>
+    </ng-template>
+</main>
+
+<ng-template #loading>
+    <h2 class="loader">Loading...</h2>
+</ng-template>

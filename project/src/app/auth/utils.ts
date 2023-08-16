@@ -2,7 +2,7 @@ import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
-    console.log('Validating email - ' + value);
+    // console.log('Validating email - ' + value);
 
     if (!value) {
         return null;
@@ -20,7 +20,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 
 export function passwordValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
-    console.log('Validating password - ' + value);
+    // console.log('Validating password - ' + value);
 
     if (!value) {
         return null;

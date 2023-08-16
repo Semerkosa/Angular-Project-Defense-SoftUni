@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { UserService } from './services/user.service';
+import { WorkoutProgramService } from './services/workout-program.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         UserService,
+        WorkoutProgramService
       ]
     }
   }
