@@ -12,13 +12,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   isLogged = false;
-  userFullName = this.userService.getUserFullName();
+  userFullName: string = '';
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.subscription = this.userService.isAuthenticated$.subscribe(loginStatus => {
       this.isLogged = loginStatus;
+      this.userFullName = this.userService.getUserFullName();
     })
   }
 

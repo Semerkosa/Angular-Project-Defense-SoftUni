@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
 				localStorage.setItem('id', response.user.id);
 				localStorage.setItem('token', response.accessToken);
-				localStorage.setItem('fullName', `${response.user.firstName} ${response.user.lastName}`);
+				localStorage.setItem('fullName', response.user.firstName + response.user.lastName);
 
 				this.userService.updateLoginStatus(true);
 

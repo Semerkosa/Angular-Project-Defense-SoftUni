@@ -14,24 +14,28 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
   public isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  updateLoginStatus(status: boolean) {
+  updateLoginStatus(status: boolean) {  
     this.isAuthenticatedSubject.next(status);
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     return !!localStorage.getItem("token"); // to retrieve boolean
   }
 
-  getUserFullName() {
-    return localStorage.getItem("fullName");
+  getUserFullName(): string {
+    console.log("service called local storage for name ", localStorage.getItem("fullName"));
+    
+    const fullName = localStorage.getItem("fullName");
+
+    return fullName ? fullName : "";
   }
 
-  login$(user: ILoginUserDto) {
+  login$(user: ILoginUserDto): Observable<any> {
     const url = `${environment.apiUrl}/login`;
     return this.http.post<any>(url, user, httpOptions);
   }
@@ -41,7 +45,7 @@ export class UserService {
     return this.http.post<ICreateUserDto>(url, user, httpOptions);
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem("id");
     localStorage.removeItem("fullName");
     localStorage.removeItem("token");
