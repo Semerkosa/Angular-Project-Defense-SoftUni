@@ -16,4 +16,8 @@ export class WorkoutProgramService {
   getWorkoutPrograms$(): Observable<IWorkoutProgram[]> {
     return this.http.get<IWorkoutProgram[]>(serviceUrl);
   } 
+
+  getWorkoutProgramById$(id: number): Observable<IWorkoutProgram> {
+    return this.http.get<IWorkoutProgram>(`${serviceUrl}/${id}`)
+  }
 }

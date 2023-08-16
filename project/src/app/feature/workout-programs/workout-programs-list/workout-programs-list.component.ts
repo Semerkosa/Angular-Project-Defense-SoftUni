@@ -29,6 +29,7 @@ export class WorkoutProgramsListComponent implements OnInit, OnDestroy {
         this.workoutPrograms = programs;
       },
       error: (err) => {
+        this.isLoaded = true;
 				console.log(err);
 			}
   });
