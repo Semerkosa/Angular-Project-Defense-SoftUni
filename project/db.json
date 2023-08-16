@@ -8,33 +8,6 @@
       "purchasedWorkoutPrograms": [],
       "coach": null,
       "id": 1
-    },
-    {
-      "email": "semersakosa@abv.bg",
-      "password": "$2a$10$EcGYm.chqeXJpXm2WSod6.FG0NIZAzxKiBGlizFUE.SI1msxRIGva",
-      "firstName": "Teodor",
-      "lastName": "Semerdzhiev",
-      "purchasedWorkoutPrograms": [],
-      "coach": null,
-      "id": 2
-    },
-    {
-      "email": "ssemerkosa@abv.bg",
-      "password": "$2a$10$yXagkQrXY1jOhCfJDDdLZ.poHHm4SsyZgK2eKV5HXhLRpE1tkYJrO",
-      "firstName": "Teodor",
-      "lastName": "",
-      "purchasedWorkoutPrograms": [],
-      "coach": null,
-      "id": 3
-    },
-    {
-      "email": "saasa@abv.bg.asda.asdasda",
-      "password": "$2a$10$XPsVEpuHyVLVULY0KgtgtO.uilmdSV9j9wh9QpW9waxPJOjQcw.gC",
-      "firstName": "Teodor",
-      "lastName": "Semerdzhiev",
-      "purchasedWorkoutPrograms": [],
-      "coach": null,
-      "id": 4
     }
   ]
 }

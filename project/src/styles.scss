@@ -11,8 +11,8 @@ body {
   padding: 0;
   height: 100%;
   font-family: "Roboto", sans-serif;
-  background-color: white;
-  color: $dark-blue;
+  background-color: white !important;
+  color: $dark-blue !important;
   display: flex;
   flex-direction: column;
 }
@@ -31,6 +31,10 @@ p {
 a {
   text-decoration: none;
   color: lightcoral;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 footer {
@@ -99,5 +103,9 @@ form {
     cursor: pointer;
     border: unset;
     border-radius: 30px;
+
+    &:hover {
+      opacity: .9;
+  }
   }
 }

@@ -12,3 +12,19 @@ main {
         margin-bottom: 1.5rem;
     }
 }
+
+#browse-btn {
+    background-color: lightcoral;
+    padding: .75rem 1.5rem;
+    border: unset;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #273658;
+    display: block;
+    margin: 2rem auto 0rem;
+
+    &:hover {
+        opacity: .9;
+    }
+}
