@@ -17,9 +17,7 @@ export class WorkoutProgramsListComponent implements OnInit, OnDestroy {
 	workoutPrograms: IWorkoutProgram[];
 
 	constructor(
-		private workoutProgramService: WorkoutProgramService,
-		private userService: UserService,
-		private router: Router) { }
+		private workoutProgramService: WorkoutProgramService) { }
 
 	ngOnDestroy(): void {
 		this.subscription.unsubscribe();
@@ -35,60 +33,6 @@ export class WorkoutProgramsListComponent implements OnInit, OnDestroy {
 			},
 			error: (err) => {
 				this.isLoaded = true;
-				console.log(err);
-			}
-		});
-	}
-
-	purchaseProgram(event: Event, program: IWorkoutProgram) {
-		if (!this.userService.isLoggedIn()) {
-			alert("To buy a program, please login.")
-			this.router.navigate(['/login']);
-			return;
-		}
-
-		const btn = event.target as HTMLElement;
-		const userId = +this.userService.getUserId(); // cast the id to number
-
-		this.userService.getUserById$(userId).subscribe({
-			next: user => {
-				console.log("User by id is", user);
-
-				let userPrograms = user.purchasedWorkoutPrograms;
-				let canPurchase = true;
-
-				for (let p of userPrograms) {
-					if (p.id === program.id) {
-						canPurchase = false;
-						break;
-					}
-				}
-
-				if (canPurchase) {
-					userPrograms.push(program);
-					console.log('New list with programs', userPrograms);
-					
-					this.userService.editUserWorkoutPrograms$(userId, userPrograms).subscribe({
-						next: editedUser => {
-							console.log("Edited user is ", editedUser);
-							
-						},
-						error: err => {
-							console.log(err);
-							
-						}
-					});
-
-					btn.textContent = 'Purchased';
-				} else {
-					btn.textContent = 'Already owned';
-				}
-
-				btn.style.backgroundColor = 'darkGreen';
-				btn.style.color = 'white';
-				btn.setAttribute('disabled', '');
-			},
-			error: err => {
 				console.log(err);
 			}
 		});

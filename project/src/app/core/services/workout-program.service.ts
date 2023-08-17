@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IWorkoutProgram } from '../interfaces';
 
-const serviceUrl = `${environment.apiUrl}/workout-programs`;
+const serverUrl = `${environment.apiUrl}/workout-programs`;
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,18 @@ export class WorkoutProgramService {
   constructor(private http: HttpClient) { }
 
   getWorkoutPrograms$(): Observable<IWorkoutProgram[]> {
-    return this.http.get<IWorkoutProgram[]>(serviceUrl);
+    return this.http.get<IWorkoutProgram[]>(serverUrl);
   } 
 
   getWorkoutProgramById$(id: number): Observable<IWorkoutProgram> {
-    return this.http.get<IWorkoutProgram>(`${serviceUrl}/${id}`)
+    return this.http.get<IWorkoutProgram>(`${serverUrl}/${id}`)
   }
+
+  editUsersForGivenWorkoutProgram$(workoutProgramId: number, userIds: number[]): Observable<IWorkoutProgram> {
+		const body = {
+			"customers": userIds
+		}
+
+		return this.http.patch<IWorkoutProgram>(`${serverUrl}/${workoutProgramId}`, body, environment.httpOptions);
+	}
 }

@@ -4,6 +4,7 @@ import { WorkoutProgramsListComponent } from './workout-programs-list/workout-pr
 import { WorkoutProgramReviewPageComponent } from './workout-program-review-page/workout-program-review-page.component';
 import { WorkoutProgramsRoutingModule } from './workout-programs-routing.module';
 import { WorkoutProgramsUserListComponent } from './workout-programs-user-list/workout-programs-user-list.component';
+import { WorkoutProgramListItemComponent } from './workout-program-list-item/workout-program-list-item.component';
 
 
 
@@ -12,6 +13,7 @@ import { WorkoutProgramsUserListComponent } from './workout-programs-user-list/w
     WorkoutProgramsListComponent,
     WorkoutProgramReviewPageComponent,
     WorkoutProgramsUserListComponent,
+    WorkoutProgramListItemComponent,
   ],
   imports: [
     CommonModule,

@@ -12,10 +12,10 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
     },
-    {
-        path: 'profile',
-        component: ProfileComponent,
-    }
+    // {
+    //     path: 'profile',
+    //     component: ProfileComponent,
+    // }
 ]
 
 export const AuthRoutingModule = RouterModule.forChild(routes);

@@ -41,11 +41,11 @@ export class UserService {
 		return this.http.get<IUser>(`${serverUrl}/${id}`);
 	}
 
-	editUserWorkoutPrograms$(userId: number, programs: IWorkoutProgram[]): Observable<IUser> {
+	editWorkoutProgramsForGivenUser$(userId: number, programs: IWorkoutProgram[]): Observable<IUser> {
 		const body = {
 			"purchasedWorkoutPrograms": programs
 		}
-		
+
 		return this.http.patch<IUser>(`${serverUrl}/${userId}`, body, environment.httpOptions);
 	}
 
