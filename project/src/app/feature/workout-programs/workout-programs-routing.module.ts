@@ -9,11 +9,11 @@ const routes: Routes = [
         component: WorkoutProgramsListComponent,
     },
     {
-        path: 'workout-programs/user/:id',
+        path: 'workout-programs/user/:userId',
         component: WorkoutProgramsUserListComponent,
     },
     {
-        path: 'workout-programs/:id',
+        path: 'workout-programs/:workoutProgramId',
         component: WorkoutProgramReviewPageComponent,
     },
 ];

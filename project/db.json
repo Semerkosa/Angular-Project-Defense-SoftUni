@@ -43,5 +43,32 @@
         "Just two month in and I can almost do a full split! I couldn't even touch my own toes before!"
       ]
     }
-  ]
+  ],
+  "coaches": [
+    {
+      "id": 1,
+      "firstName": "Dwayne",
+      "lastName": "Johnson",
+      "description": "Do you smell what The Rock is cooking? You heard me, pal! No introduction needed. You better be ready to feel the pain if you decide to hire me as your personal coach! I am not coming to terms with your bullshit excuses! You wanna look like a real fkin man? Hit the button and let's get started!",
+      "price": 999.99,
+      "reviews": [
+        "My testosterone levels literally double just as I am speaking to him... Online!!!",
+        "This man will make you go through HELL, but it is damn worth it!",
+        "There is nothing to say really... You can't expect anything less than amazing results with such a man as your coach! What a proffessional!",
+        "The Rock man... The one and only. Pure inspiration!"
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Matt",
+      "lastName": "Damon",
+      "description": "Hello there! I am Matt and I am a proffessional certified coach. Thousands of clients trust me worldwide through online coaching. If you really want a change, join me and my team!",
+      "price": 575,
+      "reviews": [
+        "Matt is such a sweetie! His workouts are unique and fun. I no longer feel obligued to visit the gym, but I go there with enthusiasm now!",
+        "This man helped me get rid of my stubborn belly fat in literally a few weeks with few simple diet tweaks!",
+        "Props to him and his team for the 24/7 online support and guidance, quick replies and even video chats!"
+      ]
+    }
+  ] 
 }

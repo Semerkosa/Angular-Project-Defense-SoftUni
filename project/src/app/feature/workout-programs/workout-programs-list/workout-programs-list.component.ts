@@ -22,7 +22,7 @@ export class WorkoutProgramsListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.workoutProgramService.getWorkoutPrograms$().subscribe({
-      next: programs => {
+      next: (programs) => {
         this.isLoaded = true;
         
         console.log(programs);

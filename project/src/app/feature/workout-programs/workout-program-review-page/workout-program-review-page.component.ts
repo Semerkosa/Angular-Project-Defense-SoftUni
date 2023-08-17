@@ -27,7 +27,7 @@ export class WorkoutProgramReviewPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const programId = params["id"];
+      const programId = params["workoutProgramId"];
 
       this.subscription = this.workoutProgramService.getWorkoutProgramById$(programId).subscribe({
         next: program => {
@@ -39,6 +39,7 @@ export class WorkoutProgramReviewPageComponent implements OnInit, OnDestroy {
         error: (err) => {
           this.isLoaded = true;
           console.log(err);
+
           this.router.navigate(['not-found']);
         }
       });
