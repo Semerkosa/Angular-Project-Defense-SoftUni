@@ -13,18 +13,19 @@ main {
     }
 }
 
-#browse-btn {
-    background-color: lightgreen;
-    padding: .75rem 1.5rem;
-    border: unset;
-    font-size: 1.25rem;
-    border-radius: 30px;
-    cursor: pointer;
-    color: #273658;
-    display: block;
-    margin: 2rem auto 0rem;
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
 
-    &:hover {
-        opacity: .9;
+    button {
+        background-color: lightgreen;
+        font-size: 1.25rem;
+    }
+
+    span {
+        font-size: 1.5rem;
     }
 }

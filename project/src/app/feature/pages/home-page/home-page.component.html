@@ -7,6 +7,10 @@
             routerLink="/register">create</a> a free account.</p>
 
     <ng-template #browseBtn>
-        <button id="browse-btn" routerLink="/workout-programs">Buy a program</button>
+        <div class="buttons">
+            <button id="browse-btn" class="btn" routerLink="/workout-programs">Buy a program</button>
+            <span>or</span>
+            <button id="hire-btn" class="btn" routerLink="/coaches">Hire a coach</button>
+        </div>
     </ng-template>
 </main>
