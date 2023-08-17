@@ -10,7 +10,7 @@
                 <a routerLink="/workout-programs/{{program.id}}">Learn More</a>
                 <div class="price-info">
                     <p>Costs only <strong>{{ program.price }}$</strong></p>
-                    <button class="btn">Buy</button>
+                    <button class="btn" (click)="purchaseProgram($event, program)">Buy</button>
                 </div>
             </li>
         </ul>

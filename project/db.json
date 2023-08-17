@@ -1,13 +1,75 @@
 {
   "users": [
     {
+      "0": {
+        "id": 1,
+        "price": 89.99,
+        "name": "Ripped in 90 days",
+        "description": "This program will help you get ripped! Get leaner, lose fat and build muscle at the same time! You will be unrecognizable in only 90 days!",
+        "reviews": [
+          "I saw amazing results on the 2nd week!",
+          "One month in and I've lost 25 pounds.",
+          "My waist became so thin that my jeans started falling."
+        ]
+      },
       "email": "semerkosa@abv.bg",
       "password": "$2a$10$FO0h7jpg5B4dfmqKp6N1P.zfWl9K1NPoq5LqXTFPVLZohpnE0s9Py",
       "firstName": "Teodor",
       "lastName": "Semerdzhiev",
-      "purchasedWorkoutPrograms": [],
+      "purchasedWorkoutPrograms": [
+        {
+          "id": 2,
+          "price": 69.99,
+          "name": "Bulk like Hulk",
+          "description": "This program will make you a monster! Build pounds of lean muscle in no time!",
+          "reviews": [
+            "I saw amazing results on the 1st day...",
+            "One month in and I've gained 10 pounds of muscle.",
+            "My biceps have grown 2 inches during the first two months!!!"
+          ]
+        },
+        {
+          "id": 3,
+          "price": 34.99,
+          "name": "Yoga Flow",
+          "description": "This program will help you feel better and in harmony with inner self by intense stretches, yoga and meditation!",
+          "reviews": [
+            "I feel so relieved. Stress is no longer an issue.",
+            "Just two month in and I can almost do a full split! I couldn't even touch my own toes before!"
+          ]
+        },
+        {
+          "id": 1,
+          "price": 89.99,
+          "name": "Ripped in 90 days",
+          "description": "This program will help you get ripped! Get leaner, lose fat and build muscle at the same time! You will be unrecognizable in only 90 days!",
+          "reviews": [
+            "I saw amazing results on the 2nd week!",
+            "One month in and I've lost 25 pounds.",
+            "My waist became so thin that my jeans started falling."
+          ]
+        }
+      ],
       "coach": null,
       "id": 1
+    },
+    {
+      "email": "ssemerkosa@abv.bg",
+      "password": "$2a$10$ZVbQT3iX1bveawYW0TTay.xlVG5vLQocc7w7Ixpjy0Mn0XULDONAm",
+      "firstName": "Teodor",
+      "lastName": "Semerdzhiev",
+      "purchasedWorkoutPrograms": [],
+      "coach": null,
+      "id": 2
+    },
+    {
+      "email": "semerkosaaaa@abv.bg",
+      "password": "$2a$10$.goo6KDTmr3t.U0/3dlamepqUKT9Dl.va540WUdKhOZ5MlU1jJnjW",
+      "firstName": "Yu",
+      "lastName": "Xang",
+      "purchasedWorkoutPrograms": [],
+      "coach": null,
+      "id": 3
     }
   ],
   "workout-programs": [
@@ -70,5 +132,5 @@
         "Props to him and his team for the 24/7 online support and guidance, quick replies and even video chats!"
       ]
     }
-  ] 
+  ]
 }
