@@ -23,6 +23,10 @@ export class UserService {
 		return !!localStorage.getItem("token"); // to retrieve boolean
 	}
 
+	isAdmin(): boolean {
+		return localStorage.getItem("isAdmin") == "true" ? true : false;
+	}
+
 	getUserFullName(): string {
 		const fullName = localStorage.getItem("fullName");
 		console.log("userService called for name ", localStorage.getItem("fullName"));
@@ -71,6 +75,7 @@ export class UserService {
 		localStorage.removeItem("id");
 		localStorage.removeItem("fullName");
 		localStorage.removeItem("token");
+		localStorage.removeItem("isAdmin");
 
 		this.updateLoginStatus(false);
 	}

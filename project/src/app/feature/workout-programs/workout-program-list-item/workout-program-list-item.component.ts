@@ -11,6 +11,7 @@ import { WorkoutProgramService } from 'src/app/core/services/workout-program.ser
 })
 export class WorkoutProgramListItemComponent implements OnChanges {
 
+    isAdmin = false;
     canPurchase = true;
 
     constructor(
@@ -22,6 +23,9 @@ export class WorkoutProgramListItemComponent implements OnChanges {
     @Input() program: IWorkoutProgram;
 
     ngOnChanges(): void {
+        this.isAdmin = this.userService.isAdmin();
+        console.log(this.isAdmin);
+        
         const userId = +this.userService.getUserId();
 
         if (userId) {

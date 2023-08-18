@@ -20,4 +20,37 @@
             background-color: lightgreen;
         }
     }
+
+    .admin-panel {
+        background-color: rgb(235, 231, 231);
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-radius: 10px;
+    
+        .customers {
+            color: green;
+        }
+
+        .no-customers {
+            color: red;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+
+            button {
+                font-size: .9rem
+            }
+
+            .edit {
+                background-color: lightblue;
+            }
+
+            .delete {
+                background-color: red;
+                color: white;
+            }
+        }
+    }
 }

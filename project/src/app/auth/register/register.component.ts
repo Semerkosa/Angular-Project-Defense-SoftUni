@@ -52,7 +52,8 @@ export class RegisterComponent implements OnInit {
 			lastName: lastName,
 			password: password,
 			purchasedWorkoutPrograms: [],
-			coach: {}
+			coach: {},
+			isAdmin: false
 		};
 
 		// this.userService.register$(body)
@@ -87,6 +88,7 @@ export class RegisterComponent implements OnInit {
 
 				localStorage.setItem('id', response.user.id);
 				localStorage.setItem('token', response.accessToken);
+				localStorage.setItem('isAdmin', response.user.isAdmin);
 
 				if (response.user.lastName) {
 					localStorage.setItem('fullName', `${response.user.firstName} ${response.user.lastName}`);
@@ -111,6 +113,7 @@ export class RegisterComponent implements OnInit {
 					lastName: lastName,
 					password: ""
 				});
+
 				this.registerFormGroup.markAsUntouched();
 			}
 		});

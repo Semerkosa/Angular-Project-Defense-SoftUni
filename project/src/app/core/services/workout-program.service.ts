@@ -23,7 +23,7 @@ export class WorkoutProgramService {
 
   editUsersForGivenWorkoutProgram$(workoutProgramId: number, userIds: number[]): Observable<IWorkoutProgram> {
 		const body = {
-			"customers": userIds
+			"customers": userIds ? userIds : []
 		}
 
 		return this.http.patch<IWorkoutProgram>(`${serverUrl}/${workoutProgramId}`, body, environment.httpOptions);

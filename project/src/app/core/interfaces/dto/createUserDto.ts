@@ -8,4 +8,5 @@ export interface ICreateUserDto {
     lastName?: string;
     purchasedWorkoutPrograms: IWorkoutProgram[] | [];
     coach: ICoach | {};
+    isAdmin: boolean;
 }

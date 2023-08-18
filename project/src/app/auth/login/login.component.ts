@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
 
 				localStorage.setItem('id', response.user.id);
 				localStorage.setItem('token', response.accessToken);
+				localStorage.setItem('isAdmin', response.user.isAdmin);
 
 				if (response.user.lastName) {
 					localStorage.setItem('fullName', `${response.user.firstName} ${response.user.lastName}`);

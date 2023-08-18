@@ -5,6 +5,8 @@ import { WorkoutProgramReviewPageComponent } from './workout-program-review-page
 import { WorkoutProgramsRoutingModule } from './workout-programs-routing.module';
 import { WorkoutProgramsUserListComponent } from './workout-programs-user-list/workout-programs-user-list.component';
 import { WorkoutProgramListItemComponent } from './workout-program-list-item/workout-program-list-item.component';
+import { AddWorkoutProgramComponent } from './add-workout-program/add-workout-program.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,10 +16,12 @@ import { WorkoutProgramListItemComponent } from './workout-program-list-item/wor
     WorkoutProgramReviewPageComponent,
     WorkoutProgramsUserListComponent,
     WorkoutProgramListItemComponent,
+    AddWorkoutProgramComponent,
   ],
   imports: [
     CommonModule,
-    WorkoutProgramsRoutingModule
+    WorkoutProgramsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class WorkoutProgramsModule { }

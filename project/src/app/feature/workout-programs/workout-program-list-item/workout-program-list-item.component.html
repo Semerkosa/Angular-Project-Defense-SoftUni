@@ -6,3 +6,21 @@
     <button class="btn" [disabled]="!canPurchase" (click)="purchaseProgram($event, program)">
         {{ canPurchase ? "Buy" : "Owned" }}</button>
 </div>
+
+<ng-container *ngIf="isAdmin">
+    <div class="admin-panel">
+        <h3>* Admin panel *</h3>
+        <p *ngIf="program.customers.length > 0; else noCustomers" class="customers">Ids of the customers who have purchased this program: {{
+            program.customers }}</p>
+
+        <ng-template #noCustomers>
+            <p class="no-customers">No customers have purchased this.</p>
+        </ng-template>
+
+        <div class="buttons">
+            <button class="btn edit">Edit</button>
+            <button class="btn delete">Delete</button>
+        </div>
+
+    </div>
+</ng-container>
