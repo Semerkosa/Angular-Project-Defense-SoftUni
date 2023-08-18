@@ -9,7 +9,7 @@ const routes: Routes = [
         component: WorkoutProgramsListComponent,
     },
     {
-        path: 'workout-programs/user/:userId',
+        path: 'workout-programs/user/programs',
         component: WorkoutProgramsUserListComponent,
     },
     {

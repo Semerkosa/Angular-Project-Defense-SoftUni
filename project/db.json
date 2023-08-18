@@ -16,6 +16,7 @@
             "One month in and I've lost 25 pounds.",
             "My waist became so thin that my jeans started falling."
           ],
+          "details": "Work out for three days, rest one. On Monday - Chest & Back. On Tuesday - Legs, Shoulders & Abs. On Wednesday - Bi's & Tri's. Rest for a day and repeat! Rest for 60-75s between sets.",
           "customers": []
         },
         {
@@ -28,6 +29,7 @@
             "One month in and I've gained 10 pounds of muscle.",
             "My biceps have grown 2 inches during the first two months!!!"
           ],
+          "details": "Work out for two days, rest one. Then work out for 2 days and rest two. On Monday - Upper Body. On Tuesday - Lower Body & Abs. Rest for a day and repeat then rest for two days to finish the week! Rest for 60-90s between sets.",
           "customers": []
         },
         {
@@ -39,11 +41,21 @@
             "I feel so relieved. Stress is no longer an issue.",
             "Just two month in and I can almost do a full split! I couldn't even touch my own toes before!"
           ],
+          "details": "Do some stretches for beginners, which you can find on YouTube... Do them every day or every other day. Don't push yourself very hard if it is too painful.",
           "customers": []
         }
       ],
       "coach": null,
       "id": 1
+    },
+    {
+      "email": "ssemerkosa@abv.bg",
+      "password": "$2a$10$MLZ.GTVTeFNpUKMGDM0WduQMgf1bzbs8Wv7XuNoQSgWBAF7P574ku",
+      "firstName": "Pesho",
+      "lastName": "",
+      "purchasedWorkoutPrograms": [],
+      "coach": null,
+      "id": 2
     }
   ],
   "workout-programs": [
@@ -57,6 +69,7 @@
         "One month in and I've lost 25 pounds.",
         "My waist became so thin that my jeans started falling."
       ],
+      "details": "Work out for three days, rest one. On Monday - Chest & Back. On Tuesday - Legs, Shoulders & Abs. On Wednesday - Bi's & Tri's. Rest for a day and repeat! Rest for 60-75s between sets.",
       "customers": [
         1
       ]
@@ -71,6 +84,7 @@
         "One month in and I've gained 10 pounds of muscle.",
         "My biceps have grown 2 inches during the first two months!!!"
       ],
+      "details": "Work out for two days, rest one. Then work out for 2 days and rest two. On Monday - Upper Body. On Tuesday - Lower Body & Abs. Rest for a day and repeat then rest for two days to finish the week! Rest for 60-90s between sets.",
       "customers": [
         1
       ]
@@ -84,6 +98,7 @@
         "I feel so relieved. Stress is no longer an issue.",
         "Just two month in and I can almost do a full split! I couldn't even touch my own toes before!"
       ],
+      "details": "Do some stretches for beginners, which you can find on YouTube... Do them every day or every other day. Don't push yourself very hard if it is too painful.",
       "customers": [
         1
       ]
