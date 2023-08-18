@@ -49,9 +49,9 @@ export class UserService {
 		return this.http.patch<IUser>(`${serverUrl}/${userId}`, body, environment.httpOptions);
 	}
 
-	editCoachForGivenUser$(userId: number, coach: ICoach): Observable<ICoach> {
+	editCoachForGivenUser$(userId: number, coach?: ICoach): Observable<ICoach> {
 		const body = {
-			"coach": coach
+			"coach": coach? coach : {} // Will unset the coach if it wasn't passed as a parameter
 		}
 
 		return this.http.patch<ICoach>(`${serverUrl}/${userId}`, body, environment.httpOptions);

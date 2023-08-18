@@ -3,5 +3,6 @@
 <a [routerLink]="['/coaches', coach.id]">Learn More</a>
 <div class="price-info">
     <p><strong>{{ coach.price }}$/month</strong></p>
-    <button class="btn" [disabled]="!canHire" (click)="hireCoach($event, coach)">{{ canHire ? "Hire" : "Hired!" }}</button>
+    <button *ngIf="canHire" class="btn hire" (click)="hireCoach(coach)">Hire</button>
+    <button *ngIf="!canHire" class="btn cancel" (click)="cancelCoach(coach)">Cancel Membership</button>
 </div>

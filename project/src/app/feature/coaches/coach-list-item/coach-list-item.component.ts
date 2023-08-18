@@ -24,14 +24,62 @@ export class CoachListItemComponent implements OnInit {
         this.canHire = !this.coach.clients.includes(userId); // if the user is within the clients of the coach, we can't hire him again
     }
 
-    hireCoach(event: Event, coach: ICoach) {
-        console.log(coach);
+    hireCoach(coach: ICoach) {
+        console.log("Coach to be hired", coach);
 
-        const btn = event.target as HTMLElement;
-        const coachId = coach.id;
         const userId = +this.userService.getUserId();
 
-        this.userService.editCoachForGivenUser$(userId, coach).subscribe({
+        this.userService.getUserById$(userId).subscribe({
+            next: userResponse => {
+                console.log(userResponse);
+
+                if (userResponse.coach && Object.keys(userResponse.coach).length > 0) {
+                    alert('You have already hired a coach. Please cancel him first.');
+                    return;
+                }
+
+                this.userService.editCoachForGivenUser$(userId, coach).subscribe({
+                    next: editedUser => {
+                        console.log("Edited user", editedUser);
+
+                        const coachId = coach.id;
+
+                        let coachClients = coach.clients;
+                        coachClients.push(userId);
+
+                        this.coachService.editUsersForGivenCoach(coachId, coachClients).subscribe({
+                            next: editedCoach => {
+                                console.log("Edited coach", editedCoach);
+                                this.canHire = false;
+                            },
+                            error: err => {
+                                console.log(err);
+                                alert("Something went wrong... Please re-login.");
+                            }
+                        });
+                    },
+                    error: err => {
+                        console.log(err);
+                        alert("Something went wrong... Please re-login.");
+                    }
+                });
+            },
+            error: err => {
+                console.log(err);
+                alert("Something went wrong... Please re-login.");
+            }
+        });
+
+
+    }
+
+    cancelCoach(coach: ICoach) {
+        console.log("Coach to be cancelled", coach);
+
+        const userId = +this.userService.getUserId();
+        const coachId = coach.id;
+
+        this.userService.editCoachForGivenUser$(userId).subscribe({
             next: editedUser => {
                 console.log("Edited user", editedUser);
             },
@@ -40,21 +88,16 @@ export class CoachListItemComponent implements OnInit {
             }
         });
 
-        let coachClients = coach.clients;
-        coachClients.push(userId);
+        const coachClients = coach.clients.filter(id => id != userId);
 
         this.coachService.editUsersForGivenCoach(coachId, coachClients).subscribe({
             next: editedCoach => {
                 console.log("Edited coach", editedCoach);
+                this.canHire = true;
             },
             error: err => {
                 console.log(err);
             }
         });
-
-        btn.textContent = 'Hired!';
-        btn.style.backgroundColor = 'darkGreen';
-        btn.style.color = 'white';
-        btn.setAttribute('disabled', '');
     }
 }
