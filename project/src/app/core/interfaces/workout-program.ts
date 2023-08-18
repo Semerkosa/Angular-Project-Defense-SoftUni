@@ -1,5 +1,5 @@
 export interface IWorkoutProgram {
-    id: string;
+    id: number;
     name: string;
     price: number; // one-time purchase
     description: string;

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ICreateUserDto, ILoginUserDto, IUser, IWorkoutProgram } from '../interfaces';
+import { ICoach, ICreateUserDto, ILoginUserDto, IUser, IWorkoutProgram } from '../interfaces';
 
 const serverUrl = `${environment.apiUrl}/users`
 
@@ -32,7 +32,7 @@ export class UserService {
 
 	getUserId(): string {
 		const userId = localStorage.getItem("id");
-		console.log("userService calledfor user id ", userId);
+		console.log("userService called for user id ", userId);
 
 		return userId ? userId : "";
 	}
@@ -47,6 +47,14 @@ export class UserService {
 		}
 
 		return this.http.patch<IUser>(`${serverUrl}/${userId}`, body, environment.httpOptions);
+	}
+
+	editCoachForGivenUser$(userId: number, coach: ICoach): Observable<ICoach> {
+		const body = {
+			"coach": coach
+		}
+
+		return this.http.patch<ICoach>(`${serverUrl}/${userId}`, body, environment.httpOptions);
 	}
 
 	login$(user: ILoginUserDto): Observable<any> {

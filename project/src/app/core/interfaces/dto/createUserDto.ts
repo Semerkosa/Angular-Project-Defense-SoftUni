@@ -7,5 +7,5 @@ export interface ICreateUserDto {
     password: string;
     lastName?: string;
     purchasedWorkoutPrograms: IWorkoutProgram[] | [];
-    coach: ICoach | null;
+    coach: ICoach | {};
 }

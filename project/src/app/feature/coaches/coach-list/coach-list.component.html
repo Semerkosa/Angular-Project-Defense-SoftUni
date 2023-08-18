@@ -4,15 +4,9 @@
         <h1>Choose between the <strong>best</strong> coaches in the world!</h1>
 
         <ul>
-            <li *ngFor="let coach of coaches">
-                <h3>{{ coach.firstName }} {{ coach.lastName }}</h3>
-                <p>{{ coach.description }}</p>
-                <a routerLink="/coaches/{{coach.id}}">Learn More</a>
-                <div class="price-info">
-                    <p><strong>{{ coach.price }}$/month</strong></p>
-                    <button class="btn">Hire</button>
-                </div>
-            </li>
+            <app-coach-list-item *ngFor="let coach of coaches" [coach]="coach">
+                
+            </app-coach-list-item>
         </ul>
     </div>
 

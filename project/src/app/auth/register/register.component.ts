@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
 			lastName: lastName,
 			password: password,
 			purchasedWorkoutPrograms: [],
-			coach: null
+			coach: {}
 		};
 
 		// this.userService.register$(body)

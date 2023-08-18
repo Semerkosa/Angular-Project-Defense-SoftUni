@@ -20,4 +20,12 @@ export class CoachService {
   getCoachById$(id: number): Observable<ICoach> {
     return this.http.get<ICoach>(`${serverUrl}/${id}`);
   }
+
+  editUsersForGivenCoach(coachId: number, userIds: number[]): Observable<ICoach> {
+    const body = {
+      "clients": userIds
+    }
+
+    return this.http.patch<ICoach>(`${serverUrl}/${coachId}`, body, environment.httpOptions);
+  }
 }

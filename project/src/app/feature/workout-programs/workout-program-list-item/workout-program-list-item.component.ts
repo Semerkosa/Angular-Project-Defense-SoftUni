@@ -22,10 +22,10 @@ export class WorkoutProgramListItemComponent implements OnChanges {
     @Input() program: IWorkoutProgram;
 
     ngOnChanges(): void {
-        const userId = this.userService.getUserId();
+        const userId = +this.userService.getUserId();
 
         if (userId) {
-            this.canPurchase = !this.program.customers.includes(+userId); // if id is included - we return false
+            this.canPurchase = !this.program.customers.includes(userId); // if id is included - we return false
         }
     }
 
@@ -37,7 +37,7 @@ export class WorkoutProgramListItemComponent implements OnChanges {
         }
 
         const btn = event.target as HTMLElement;
-        const programId = +program.id;
+        const programId = program.id;
         const userId = +this.userService.getUserId(); // cast the id to number
 
         this.userService.getUserById$(userId).subscribe({
@@ -76,7 +76,6 @@ export class WorkoutProgramListItemComponent implements OnChanges {
                 });
 
                 btn.textContent = 'Purchased';
-
                 btn.style.backgroundColor = 'darkGreen';
                 btn.style.color = 'white';
                 btn.setAttribute('disabled', '');
