@@ -3,4 +3,6 @@ export interface ICreateProgram {
     price: number;
     description: string;
     details: string;
+    reviews: string[] | [];
+    customers: number[] | [];
 }

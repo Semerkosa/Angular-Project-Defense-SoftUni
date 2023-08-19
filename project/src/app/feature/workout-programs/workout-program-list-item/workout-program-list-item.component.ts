@@ -24,7 +24,6 @@ export class WorkoutProgramListItemComponent implements OnChanges {
 
     ngOnChanges(): void {
         this.isAdmin = this.userService.isAdmin();
-        console.log(this.isAdmin);
         
         const userId = +this.userService.getUserId();
 

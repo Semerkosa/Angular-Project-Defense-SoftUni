@@ -2,66 +2,25 @@
   "users": [
     {
       "email": "admin@abv.bg",
-      "password": "$2a$10$OWTcTfqOAsUL07EOWNcgl.yebtimisTaMxuPu51.m3tydb.tsUQjO",
+      "password": "$2a$10$vJqal096SlEkqz5qJCWyP.6a5fn/dkZhsY.hrY6rpzxa4y7aM/WIC",
       "firstName": "Admin",
       "lastName": "Adminov",
       "purchasedWorkoutPrograms": [
         {
-          "id": 1,
-          "price": 89.99,
-          "name": "Ripped in 90 days",
-          "description": "This program will help you get ripped! Get leaner, lose fat and build muscle at the same time! You will be unrecognizable in only 90 days!",
+          "name": "asd",
+          "price": 1,
+          "description": "asd",
+          "details": "asd",
           "reviews": [
-            "I saw amazing results on the 2nd week!",
-            "One month in and I've lost 25 pounds.",
-            "My waist became so thin that my jeans started falling."
+            "This program helped me achive amazing results in less than 3 weeks!"
           ],
-          "details": "Work out for three days, rest one. On Monday - Chest & Back. On Tuesday - Legs, Shoulders & Abs. On Wednesday - Bi's & Tri's. Rest for a day and repeat! Rest for 60-75s between sets.",
-          "customers": []
+          "customers": [],
+          "id": 4
         }
       ],
       "coach": {},
       "isAdmin": true,
       "id": 1
-    },
-    {
-      "email": "semerkosa@abv.bg",
-      "password": "$2a$10$juYjfzWaYg/vNSd23QSHNeovIM/l1adDYvnSlF55ukcT38fSq.y22",
-      "firstName": "Teodor",
-      "lastName": "Semerdzhiev",
-      "purchasedWorkoutPrograms": [
-        {
-          "id": 1,
-          "price": 89.99,
-          "name": "Ripped in 90 days",
-          "description": "This program will help you get ripped! Get leaner, lose fat and build muscle at the same time! You will be unrecognizable in only 90 days!",
-          "reviews": [
-            "I saw amazing results on the 2nd week!",
-            "One month in and I've lost 25 pounds.",
-            "My waist became so thin that my jeans started falling."
-          ],
-          "details": "Work out for three days, rest one. On Monday - Chest & Back. On Tuesday - Legs, Shoulders & Abs. On Wednesday - Bi's & Tri's. Rest for a day and repeat! Rest for 60-75s between sets.",
-          "customers": [
-            1
-          ]
-        },
-        {
-          "id": 2,
-          "price": 69.99,
-          "name": "Bulk like Hulk",
-          "description": "This program will make you a monster! Build pounds of lean muscle in no time!",
-          "reviews": [
-            "I saw amazing results on the 1st day...",
-            "One month in and I've gained 10 pounds of muscle.",
-            "My biceps have grown 2 inches during the first two months!!!"
-          ],
-          "details": "Work out for two days, rest one. Then work out for 2 days and rest two. On Monday - Upper Body. On Tuesday - Lower Body & Abs. Rest for a day and repeat then rest for two days to finish the week! Rest for 60-90s between sets.",
-          "customers": []
-        }
-      ],
-      "coach": {},
-      "isAdmin": false,
-      "id": 2
     }
   ],
   "workout-programs": [
@@ -76,10 +35,7 @@
         "My waist became so thin that my jeans started falling."
       ],
       "details": "Work out for three days, rest one. On Monday - Chest & Back. On Tuesday - Legs, Shoulders & Abs. On Wednesday - Bi's & Tri's. Rest for a day and repeat! Rest for 60-75s between sets.",
-      "customers": [
-        1,
-        2
-      ]
+      "customers": []
     },
     {
       "id": 2,
@@ -92,9 +48,7 @@
         "My biceps have grown 2 inches during the first two months!!!"
       ],
       "details": "Work out for two days, rest one. Then work out for 2 days and rest two. On Monday - Upper Body. On Tuesday - Lower Body & Abs. Rest for a day and repeat then rest for two days to finish the week! Rest for 60-90s between sets.",
-      "customers": [
-        2
-      ]
+      "customers": []
     },
     {
       "id": 3,
@@ -107,6 +61,19 @@
       ],
       "details": "Do some stretches for beginners, which you can find on YouTube... Do them every day or every other day. Don't push yourself very hard if it is too painful.",
       "customers": []
+    },
+    {
+      "name": "asd",
+      "price": 1,
+      "description": "asd",
+      "details": "asd",
+      "reviews": [
+        "This program helped me achive amazing results in less than 3 weeks!"
+      ],
+      "customers": [
+        1
+      ],
+      "id": 4
     }
   ],
   "coaches": [

@@ -4,37 +4,7 @@
         <h1>Different lifestyle - different program!</h1>
         <button *ngIf="isAdmin" class="btn create" (click)="toggleCreateForm()">Create</button>
 
-        <ng-container *ngIf="shouldShowCreateForm">
-            <form [formGroup]="createProgramFormGroup" (ngSubmit)="createProgram()">
-                <h2>Create Workout Program</h2>
-        
-                <div class="form-input">
-                    <label for="name">Name</label>
-                    <input type="text" id="name"
-                        formControlName="name">
-                </div>
-        
-                <div class="form-input">
-                    <label for="price">Price</label>
-                    <input type="number" id="price"
-                        formControlName="price">
-                </div>
-
-                <div class="form-input">
-                    <label for="description">Description</label>
-                    <input type="text" id="description"
-                        formControlName="description">
-                </div>
-
-                <div class="form-input">
-                    <label for="details">Details</label>
-                    <input type="text" id="details"
-                        formControlName="details">
-                </div>
-
-                <button>Create</button>
-            </form>
-        </ng-container>
+        <app-add-workout-program *ngIf="shouldShowCreateForm" (addWorkoutProgram)="addWorkoutProgramToList($event)"></app-add-workout-program>
 
         <ul>
             <app-workout-program-list-item *ngFor="let program of workoutPrograms" [program]="program"></app-workout-program-list-item>

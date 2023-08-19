@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IWorkoutProgram } from '../interfaces';
+import { ICreateProgram, IWorkoutProgram } from '../interfaces';
 
 const serverUrl = `${environment.apiUrl}/workout-programs`;
 
@@ -25,7 +25,11 @@ export class WorkoutProgramService {
 		const body = {
 			"customers": userIds ? userIds : []
 		}
-
+    
 		return this.http.patch<IWorkoutProgram>(`${serverUrl}/${workoutProgramId}`, body, environment.httpOptions);
 	}
+
+  createWorkoutProgram$(program: ICreateProgram): Observable<IWorkoutProgram> {
+    return this.http.post<IWorkoutProgram>(`${serverUrl}`, program, environment.httpOptions);
+  }
 }
