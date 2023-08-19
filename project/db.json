@@ -6,17 +6,6 @@
       "firstName": "Admin",
       "lastName": "Adminov",
       "purchasedWorkoutPrograms": [
-        {
-          "name": "asd",
-          "price": 1,
-          "description": "asd",
-          "details": "asd",
-          "reviews": [
-            "This program helped me achive amazing results in less than 3 weeks!"
-          ],
-          "customers": [],
-          "id": 4
-        }
       ],
       "coach": {},
       "isAdmin": true,
@@ -61,19 +50,6 @@
       ],
       "details": "Do some stretches for beginners, which you can find on YouTube... Do them every day or every other day. Don't push yourself very hard if it is too painful.",
       "customers": []
-    },
-    {
-      "name": "asd",
-      "price": 1,
-      "description": "asd",
-      "details": "asd",
-      "reviews": [
-        "This program helped me achive amazing results in less than 3 weeks!"
-      ],
-      "customers": [
-        1
-      ],
-      "id": 4
     }
   ],
   "coaches": [

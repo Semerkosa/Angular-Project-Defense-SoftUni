@@ -4,10 +4,10 @@
         <h1>Different lifestyle - different program!</h1>
         <button *ngIf="isAdmin" class="btn create" (click)="toggleCreateForm()">Create</button>
 
-        <app-add-workout-program *ngIf="shouldShowCreateForm" (addWorkoutProgram)="addWorkoutProgramToList($event)"></app-add-workout-program>
+        <app-add-workout-program *ngIf="shouldShowCreateForm" (onProgramCreate)="addWorkoutProgramToList($event)"></app-add-workout-program>
 
         <ul>
-            <app-workout-program-list-item *ngFor="let program of workoutPrograms" [program]="program"></app-workout-program-list-item>
+            <app-workout-program-list-item *ngFor="let program of workoutPrograms" [program]="program" (onProgramDelete)="removeWorkoutProgramFromList($event)"></app-workout-program-list-item>
         </ul>
     </div>
 

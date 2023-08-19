@@ -53,4 +53,8 @@ export class WorkoutProgramsListComponent implements OnInit, OnDestroy {
 		this.toggleCreateForm();
 	}
 
+	removeWorkoutProgramFromList(programId: number) {
+		this.workoutPrograms = this.workoutPrograms.filter(p => p.id != programId);
+		console.log("New programs list", this.workoutPrograms);
+	}
 }

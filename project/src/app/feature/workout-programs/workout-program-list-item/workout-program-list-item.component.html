@@ -10,8 +10,8 @@
 <ng-container *ngIf="isAdmin">
     <div class="admin-panel">
         <h3>* Admin panel *</h3>
-        <p *ngIf="program.customers.length > 0; else noCustomers" class="customers">Ids of the customers who have purchased this program: {{
-            program.customers }}</p>
+        <p *ngIf="program.customers.length > 0; else noCustomers" class="customers">Count of customers who have purchased this program: {{
+            program.customers.length }}</p>
 
         <ng-template #noCustomers>
             <p class="no-customers">No customers have purchased this.</p>
@@ -19,7 +19,7 @@
 
         <div class="buttons">
             <button class="btn edit">Edit</button>
-            <button class="btn delete">Delete</button>
+            <button class="btn delete" (click)="deleteProgram()">Delete</button>
         </div>
 
     </div>

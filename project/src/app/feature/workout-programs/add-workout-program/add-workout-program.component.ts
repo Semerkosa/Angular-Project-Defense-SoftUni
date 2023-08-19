@@ -12,7 +12,7 @@ export class AddWorkoutProgramComponent implements OnInit {
 
   errorMessage = "";
 
-  @Output() addWorkoutProgram = new EventEmitter<IWorkoutProgram>();
+  @Output() onProgramCreate = new EventEmitter<IWorkoutProgram>();
 
   constructor(private formBuilder: FormBuilder, private workoutProgramService: WorkoutProgramService) { }
 
@@ -54,7 +54,7 @@ export class AddWorkoutProgramComponent implements OnInit {
         this.createProgramFormGroup.markAsUntouched();
 
         alert("New workout program created successfully!")
-        this.addWorkoutProgram.emit(createdProgram);
+        this.onProgramCreate.emit(createdProgram);
       },
       error: err => {
         console.log(err);
