@@ -25,6 +25,10 @@
         <p *ngIf="createProgramFormGroup.controls['price'].errors?.['required']" class="error">
             Program price is required!
         </p>
+
+        <p *ngIf="createProgramFormGroup.controls['price'].errors?.['min']" class="error">
+            Min program price is 1
+        </p>
     </ng-container>
 
     <div class="form-input">

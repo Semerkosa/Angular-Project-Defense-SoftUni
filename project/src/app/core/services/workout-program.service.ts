@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ICreateProgram, IWorkoutProgram } from '../interfaces';
+import { ICreateProgram, IEditProgram, IWorkoutProgram } from '../interfaces';
 
 const serverUrl = `${environment.apiUrl}/workout-programs`;
 
@@ -35,5 +35,9 @@ export class WorkoutProgramService {
 
   deleteWorkoutProgramById$(programId: number): Observable<any> {
     return this.http.delete<any>(`${serverUrl}/${programId}`);
+  }
+
+  editWorkoutProgramById$(programId: number, program: IEditProgram): Observable<IWorkoutProgram> {
+    return this.http.patch<IWorkoutProgram>(`${serverUrl}/${programId}`, program, environment.httpOptions);
   }
 }

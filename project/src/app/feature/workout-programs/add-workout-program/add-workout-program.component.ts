@@ -21,7 +21,7 @@ export class AddWorkoutProgramComponent implements OnInit {
 
   createProgramFormGroup: FormGroup = this.formBuilder.group({
 		name: new FormControl(null, Validators.required),
-		price: new FormControl(null, Validators.required),
+		price: new FormControl(null, [Validators.required, Validators.min(1)]),
 		description: new FormControl(null, Validators.required),
 		details: new FormControl(null, Validators.required)
 	});

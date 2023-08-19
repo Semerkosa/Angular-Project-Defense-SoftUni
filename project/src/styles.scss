@@ -1,4 +1,5 @@
 $dark-blue: #273658;
+$light-grey: #c5c5c5;
 
 @font-face {
   font-family: "Roboto";
@@ -121,6 +122,22 @@ form {
 
     &:hover {
       opacity: 0.9;
+    }
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    button, input, a {
+      margin: 0;
+    }
+
+    .cancel {
+      background-color: $light-grey;
     }
   }
 }

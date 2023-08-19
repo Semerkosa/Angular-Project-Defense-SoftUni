@@ -6,7 +6,8 @@ import { WorkoutProgramsRoutingModule } from './workout-programs-routing.module'
 import { WorkoutProgramsUserListComponent } from './workout-programs-user-list/workout-programs-user-list.component';
 import { WorkoutProgramListItemComponent } from './workout-program-list-item/workout-program-list-item.component';
 import { AddWorkoutProgramComponent } from './add-workout-program/add-workout-program.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditWorkoutProgramComponent } from './edit-workout-program/edit-workout-program.component';
 
 
 
@@ -17,11 +18,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     WorkoutProgramsUserListComponent,
     WorkoutProgramListItemComponent,
     AddWorkoutProgramComponent,
+    EditWorkoutProgramComponent,
   ],
   imports: [
     CommonModule,
     WorkoutProgramsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class WorkoutProgramsModule { }

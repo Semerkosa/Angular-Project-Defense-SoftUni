@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IWorkoutProgram } from 'src/app/core/interfaces';
 import { UserService } from 'src/app/core/services/user.service';
@@ -13,19 +14,19 @@ export class WorkoutProgramListItemComponent implements OnChanges {
 
     isAdmin = false;
     canPurchase = true;
+    errorMessage = "";
 
     constructor(
         private userService: UserService,
         private workoutProgramService: WorkoutProgramService,
         private router: Router) { }
 
-
     @Input() program: IWorkoutProgram;
     @Output() onProgramDelete = new EventEmitter<number>();
 
     ngOnChanges(): void {
         this.isAdmin = this.userService.isAdmin();
-        
+
         const userId = +this.userService.getUserId();
 
         if (userId) {
@@ -65,7 +66,7 @@ export class WorkoutProgramListItemComponent implements OnChanges {
                 });
 
                 let workoutProgramCustomers = program.customers;
-                
+
                 workoutProgramCustomers.push(user.id);
                 console.log('New list with customers', workoutProgramCustomers);
 
@@ -91,17 +92,34 @@ export class WorkoutProgramListItemComponent implements OnChanges {
         });
     }
 
-    deleteProgram() {
-        const programId = this.program.id;
-        this.workoutProgramService.deleteWorkoutProgramById$(programId).subscribe({
-            next: deletedProgram => {
-                console.log("Deleted the program with id ", programId);
-                
-                this.onProgramDelete.emit(programId);
-            },
-            error: err => {
-                console.log("Failed to delete the program with id ", programId, err);
-            }
-        });
+    editProgram() {
+        this.router.navigate(["/workout-programs/edit", this.program.id]);
     }
+
+    deleteProgram() {
+        if (confirm("Do you really want to delete this Workout Program? This action cannot be undone!")) {
+            const programId = this.program.id;
+            this.workoutProgramService.deleteWorkoutProgramById$(programId).subscribe({
+                next: deletedProgram => {
+                    console.log("Deleted the program with id ", programId);
+
+                    this.onProgramDelete.emit(programId);
+                },
+                error: err => {
+                    console.log("Failed to delete the program with id ", programId, err);
+                }
+            });
+        }
+
+    }
+
+    // shouldShowErrorForControl(
+    // 	controlName: string,
+    // 	sourceGroup: FormGroup = this.editProgramFormGroup
+    // ) {    
+    // 	return (
+    // 		sourceGroup.controls[controlName].touched &&
+    // 		sourceGroup.controls[controlName].invalid
+    // 	);
+    // }
 }
