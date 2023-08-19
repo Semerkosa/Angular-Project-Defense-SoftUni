@@ -1,23 +1,26 @@
 # Gimy
 
-The src code of my first Angular project at SoftUni, which I will have to defend a few days from its creation... 
-
 Project **Gimy** is about working out. Customers can buy a workout program or hire an online coach to help them on their journey.
 
 Guest users have access to the home, login and register pages. They can also browse through the avaible programs and read the reviews of the satisfied customers, who have previously purchased a given workout program.
 
 Logged in users can:
 - See the home page (slightly different)
-- Browse through the available workout programs and purchase one;
+- Browse through the available workout programs and purchase as many as they wish;
 - Browse through the available online coaches and hire one;
 - Read reviews of a specific program/coach;
-- See their profile
-- See a page with the workout programs they have already purchased;
+- See the workout programs they have already purchased and the workout details (training splits, exercises, rest periods, etc...);
 
-The navigation menu changes according to the authentication status (whether loggin in or not).
+Admin users can:
+- Create new workout programs;
+- Edit existing workout programs;
+- Delete existing workout programs;
+
+The navigation menu changes dynamically according to the authentication status (whether loggin in or not).
+The UX is flawless. Clean and good-looking design. Added error handling - messages (or window alerts) on invalid input data, failed HTTP requests and so on. 
 
 ## Instructions to run the project:
-> Json server and Json server auth are used to replicate a real backend server [Json Server](https://www.npmjs.com/package/json-server) [Json Server Auth](https://www.npmjs.com/package/json-server-auth).
+> [Json Server](https://www.npmjs.com/package/json-server) and [Json Server Auth](https://www.npmjs.com/package/json-server-auth) are used to replicate a real backend server.
 
 - Clone the project, go into the root directory (named 'project') and open two separate terminals;
 - Download all the vital modules with `npm i`
